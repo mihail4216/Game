@@ -8,13 +8,23 @@
     padding:10
     spacing:10
     BoxLayout:
+
         Label:
-            text:'Click on a word to change it!'
+
+            font_size: 32
+            text: 'verno:'
+        Label:
+            id:tre
+            font_size:32
+            text:'0'
+
+
     BoxLayout:
         display:word
         Gb:
             id:word
             text:  root.t_random_word()
+            on_press:entry.text=''
             on_press: word.text=root.t_random_word()
 
 
@@ -25,16 +35,7 @@
             font_size: 32
             multiline: False
 
-    BoxLayout:
 
-        Label:
-
-            font_size: 32
-            text: 'verno:'
-        Label:
-            id:tre
-            font_size:32
-            text:'0'
 
     BoxLayout:
         Gb:
