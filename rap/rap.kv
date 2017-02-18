@@ -1,9 +1,6 @@
 <Gb@Button>:
     font_size: 32
-<qwer>:
-    id:wer
-    BoxLayout:
-        button:
+
 <RapLayout>:
     id:rep
     display: entry
@@ -18,13 +15,7 @@
         Gb:
             id:word
             text:  root.t_random_word()
-            on_press: ver.text=root.t_random_word()
-
-    BoxLayout:
-        TextInput:
-            id: ver
-            font_size:32
-
+            on_press: word.text=root.t_random_word()
 
 
     BoxLayout:
@@ -33,12 +24,22 @@
             hint_text: "Enter Word"
             font_size: 32
             multiline: False
+
     BoxLayout:
 
         Label:
+
             font_size: 32
-            text: 'verno:'+''
+            text: 'verno:'
+        Label:
+            id:tre
+            font_size:32
+            text:'0'
+
     BoxLayout:
         Gb:
             text: "check"
-            on_press: rep.check()
+            on_press:entry.text=''
+            on_press:word.text=root.t_random_word()
+            on_press: tre.text=str(int(tre.text)+int(root.check(word.text,entry.text)))
+

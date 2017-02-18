@@ -1,4 +1,4 @@
-
+# -*- coding: utf-8 -*-
 
 ################################################
 # import bs4 as bs
@@ -21,8 +21,25 @@
 #
 # print list1
 ##############################################
+# import bs4 as bs
+# import urllib2
+# qwe=('А Б В Г Д Е Ж З И К Л М Н О П Р С Т У Ф Х Ц Ч Ш Щ Э Ю')
+# q=qwe.split()
+#
+# # for i in qwe:
+# sas = urllib2.urlopen('http://www.ruslo.net/index.php/list/19-vse-suschestvitel-nye-russkogo-yazyka/,'+'А'+'.xhtml')
+# soup = bs.BeautifulSoup(sas,'lxml')
+# a = soup.find_all('td')
+# print a
+#
+#
+
+#################################################
 def dicture():
-    f = open('text.txt','r')
+    f = open('word_rus.txt','r')
     q=f.read()
     a=q.split()
+    f.close()
     return a
+
+

@@ -12,6 +12,9 @@ Builder.load_file('rap.kv')
 
 class RapLayout(GridLayout):
 
+    def __init__(self):
+        super(RapLayout, self).__init__()
+        self.count1=0
     # def pig(self):
     #     popup = Popup(title="popup",content=Label(text='you pig'),size_hint=(None,None),auto_dismiss=True,size=(400,400))
     #     popup.open()
@@ -22,11 +25,27 @@ class RapLayout(GridLayout):
         return dicture()[i]
 
 
+    def count(self,a):
 
-    def check(self,):
-        # print 'display '+self.
-        print 'displayid' + self.display['ver']
-        pass
+        a+=1
+        return a
+
+    def check(self,x,y):
+        upper_rifma = y.upper()
+        slovo = x.lower()
+        rifma = y.lower()
+        print upper_rifma
+
+        if rifma.encode('utf-8') in dicture():
+            if slovo[-2:2]==rifma[-2:2]:
+
+                self.display.text=''
+                # self.t_random_word()
+                return 1
+        return 0
+
+
+
 
 
 
@@ -43,4 +62,5 @@ class MyRapApp(App):
 
 
 if __name__ == '__main__':
-    MyRapApp().run()
+    app=MyRapApp()
+    app.run()
